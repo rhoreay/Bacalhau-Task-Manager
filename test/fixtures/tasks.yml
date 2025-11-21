@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+shop_task:
+  title: "Compras do mes"
+  description: "Ir ao supermercado Assai e fazer as compras do mes"
+  status: "pending"
+
+study_task:
+  title: "Estudar"
+  description: "Estudar para a prova de redes, da terca feira que vem"
+  status: "finished"

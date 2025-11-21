@@ -1,0 +1,12 @@
+<div class="mx-auto p-6 rounded-xl bg-white border shadow-sm">
+  <header class="mb-6 text-center border-b border-gray-500 pb-2">
+    <h1 class="text-3xl font-bold">Adicionando nova Pessoa</h1>
+  </header>
+
+  <%= render "form", people: @people %>
+
+  <div class="mt-6 text-center">
+    <%= link_to "Voltar", home_path, class: "text-gray-600 border-b border-gray-400" %>
+  </div>
+  
+</div>

@@ -1,0 +1,53 @@
+<!-- app/views/home/index.html.erb -->
+
+<div class="mx-auto">
+  
+  <header class="mb-15 text-center">
+    <h1 class="text-4xl font-bold">🐟 Bacalhau Task Manager 🐟</h1>
+  </header>
+
+  <div class="md:grid md:grid-cols-2 mx-auto gap-9">
+
+    <div>
+      <div class="max-w-md mx-auto p-6 rounded-xl bg-white border">
+        <div class="pb-2 border-b border-gray-300">
+          <h1 class="text-2xl font-semibold">Todas as tarefas registradas:</h1>
+        </div>
+
+        <div class="mt-4">
+          <ul>
+            <% @tasks.each do |task| %>
+              <a href="/tasks/<%= task.id %>" class="mb-2 text-blue-700 block">
+                <%= task.title %>
+              </a>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      <a href="/tasks/new" class="text-gray-500 ml-4 border-b border-gray-400">Adicionar Tarefa</a>
+    </div>
+
+    <div>
+      <div class="max-w-md mx-auto p-6 rounded-xl bg-white border mt-8 md:mt-0">
+        <div class="pb-2 border-b border-gray-300">
+          <h1 class="text-2xl font-semibold">Todas as pessoas registradas:</h1>
+        </div>
+
+        <div class="mt-4">
+          <ul>
+            <% @people.each do |person| %>
+              <a href="/people/<%= person.id %>" class="mb-2 text-blue-700 block">
+                <%= person.name %>
+              </a>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      <div id="links">
+        <a href="/people/new/" class="text-gray-500 ml-4 border-b border-gray-400">Adicionar Pessoa</a>
+      </div>
+      
+    </div>
+  </div>
+
+</div>

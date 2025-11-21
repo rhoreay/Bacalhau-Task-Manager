@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+vitor_person:
+  name: "Vitor Paiva"
+  cpf: "03861044250"
+  email: "vitorpaiva@gmail.com"
+
+isabella_person:
+  name: "Isabella Ferracioli"
+  cpf: "59224428215"
+  email: "ifbpvh@gmail.com"

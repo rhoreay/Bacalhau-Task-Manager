@@ -1,0 +1,30 @@
+<%= form_with model: @person do |form| %>
+<div class="mb-4">
+    <%= form.label :name, "Nome:", class: "block font-medium mb-1" %>
+    <%= form.text_field :name, class: "w-full border rounded-lg p-2" %>
+</div>
+
+<div class="mb-4">
+    <%= form.label :cpf, "CPF:", class: "block font-medium mb-1" %>
+    <%= form.text_field :cpf, class: "w-full border rounded-lg p-2" %>
+</div>
+
+<div class="mb-4">
+    <%= form.label :email, "Email:", class: "block font-medium mb-1" %>
+    <%= form.text_field :email, class: "w-full border rounded-lg p-2" %>
+</div>
+
+<div class="mt-6">
+    <%= form.submit "Salvar pessoa", class: "w-full bg-white text-black border py-2 rounded-lg font-medium cursor-pointer hover:bg-black hover:text-white" %>
+</div>
+<% end %>
+
+<% if @person.errors.any? %>
+<div class="mt-4 text-red-600 text-sm">
+    <ul>
+    <% @person.errors.full_messages.each do |error_message| %>
+        <li><%= error_message %></li>
+    <% end %>
+    </ul>
+</div>
+<% end %>

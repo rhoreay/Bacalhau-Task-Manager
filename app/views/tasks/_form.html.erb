@@ -1,0 +1,49 @@
+<%= form_with model: @task do |form| %>
+<div class="mb-4">
+    <%= form.label :title, "Titulo:", class: "block font-medium mb-1" %>
+    <%= form.text_field :title, class: "w-full border rounded-lg p-2" %>
+</div>
+
+<div class="mb-4">
+    <%= form.label :description, "Descricao:", class: "block font-medium mb-1" %>
+    <%= form.text_field :description, class: "w-full border rounded-lg p-2" %>
+</div>
+
+<div class="mb-4">
+    <%= form.label :status, "Status:", class: "block font-medium mb-1" %>
+    <%= form.select :status, [
+    ["Pendente", "pending"],
+    ["Em andamento", "in_progress"],
+    ["Finalizada", "finished"]
+    ], {}, class: "w-full border rounded-lg p-2 bg-white" %>
+</div>
+
+<div class="mb-4">
+    <label class="block font-medium mb-1">Participantes:</label>
+    <div class="">
+        <div class="max-w-md grid grid-cols-3 space-x-3">
+            <%= form.collection_check_boxes :person_ids, Person.all, :id, :name do |person| %>
+                <div class="">
+                    <%= person.check_box %>
+                    <%= person.label %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+<div class="mt-6">
+    <%= form.submit "Salvar tarefa", class: "w-full bg-white text-black border py-2 rounded-lg font-medium cursor-pointer hover:bg-black hover:text-white" %>
+</div>
+
+<% if @task.errors.any? %>
+    <div class="mt-4 text-red-600 text-sm">
+        <ul>
+        <% @task.errors.full_messages.each do |error_message| %>
+            <li><%= error_message %></li>
+        <% end %>
+        </ul>
+    </div>
+    <% end %>
+    
+<% end %>
